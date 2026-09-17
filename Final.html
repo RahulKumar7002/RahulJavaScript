@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management Dashboard</title>
+    <link rel="stylesheet" href="Final.css">
+</head>
+
+<body>
+    <div class="page">
+        <div class="top-header">
+            <div class="header-left">
+                <div class="logo">
+                    EMS
+                </div>
+                <div>
+                    <div class="tag">
+                        EMPLOYEE MANAGEMENT
+                    </div>
+
+                    <h1>Employee Dashboard</h1>
+
+                    <div class="header-text">
+                        Manage employee information and salary details
+                    </div>
+                </div>
+            </div>
+            <div id="dateTime"></div>
+        </div>
+
+
+        <div class="search-area">
+            <div class="search-input">
+                <span>⌕</span>
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search employee by name or email..."
+                >
+            </div>
+
+            <button id="searchButton">
+                Search
+            </button>
+
+        </div>
+
+
+        <!-- Department Filters -->
+        <div class="filter-area">
+
+            <button id="allButton">All</button>
+            <button id="itButton">IT</button>
+            <button id="hrButton">HR</button>
+            <button id="financeButton">Finance</button>
+            <button id="marketingButton">Marketing</button>
+
+        </div>
+
+
+        <!-- Message -->
+        <div id="message"></div>
+
+
+        <!-- Statistics -->
+        <div class="stats">
+
+            <div class="stat-box">
+                <div class="stat-symbol employee-symbol">👥</div>
+
+                <div>
+                    <p class="stat-label">TOTAL EMPLOYEES</p>
+                    <h2 id="employeeCount">0</h2>
+                </div>
+            </div>
+
+
+            <div class="stat-box">
+                <div class="stat-symbol salary-symbol">₹</div>
+
+                <div>
+                    <p class="stat-label">TOTAL SALARY</p>
+                    <h2 id="totalSalary">₹0</h2>
+                </div>
+            </div>
+
+
+            <div class="stat-box">
+                <div class="stat-symbol average-symbol">▣</div>
+
+                <div>
+                    <p class="stat-label">AVERAGE SALARY</p>
+                    <h2 id="averageSalary">₹0</h2>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Highest Paid Employee -->
+        <div class="highest-box" id="highestEmployee"></div>
+
+
+        <!-- Employee Directory -->
+        <div class="content-section">
+
+            <div class="section-header">
+
+                <p>EMPLOYEE DIRECTORY</p>
+
+                <div class="employee-heading">
+
+                    <h2>All Employees</h2>
+
+                    <span class="directory-count">
+                        <span id="directoryCount">0</span> Employees
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Sorting -->
+            <div class="sort-box">
+
+                <button id="sortNameAZButton">
+                    <span>↕️</span>
+                    Name A-Z
+                </button>
+
+                <button id="sortNameZAButton">
+                    <span>↕️</span>
+                    Name Z-A
+                </button>
+
+                <button id="sortSalaryHighButton">
+                    <span>₹</span>
+                    Salary High
+                </button>
+
+                <button id="sortSalaryLowButton">
+                    <span>₹</span>
+                    Salary Low
+                </button>
+
+                <button id="sortAgeLowButton">
+                    <span>↑</span>
+                    Age Low
+                </button>
+
+                <button id="sortAgeHighButton">
+                    <span>↓</span>
+                    Age High
+                </button>
+
+            </div>
+
+
+            <!-- Employee Cards -->
+            <div class="employee-grid" id="employeeContainer"></div>
+
+        </div>
+
+
+        <!-- Add Employee -->
+        <div class="add-section">
+
+            <div class="add-header">
+
+                <div class="add-icon">
+                    +
+                </div>
+
+                <div>
+                    <p>NEW RECORD</p>
+                    <h2>Add Employee</h2>
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="input-group">
+                    <label for="name">Employee Name</label>
+                    <input type="text" id="name" placeholder="Enter employee name">
+                </div>
+
+                <div class="input-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" placeholder="Enter age">
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter email">
+                </div>
+
+                <div class="input-group">
+                    <label for="department">Department</label>
+
+                    <select id="department">
+                        <option value="">Select Department</option>
+                        <option value="IT">IT</option>
+                        <option value="HR">HR</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Marketing">Marketing</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="salary">Salary</label>
+                    <input type="number" id="salary" placeholder="Enter salary">
+                </div>
+
+            </div>
+
+
+            <div id="errorMessage"></div>
+
+            <button class="add-button" id="addEmployeeButton">
+                Add Employee
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="Final.js"></script>
+
+</body>
+</html>
